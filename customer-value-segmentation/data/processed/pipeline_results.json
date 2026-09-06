@@ -1,0 +1,424 @@
+{
+  "clean_log": {
+    "duplicate_customer_rows_removed": 32,
+    "duplicate_transaction_rows_removed": 889,
+    "duplicate_customer_ids_collapsed": 0,
+    "missing_pct_customers": {
+      "region": 2.0,
+      "age": 4.0,
+      "avg_satisfaction_score": 12.0
+    },
+    "missing_pct_transactions": {
+      "order_value": 0.5
+    },
+    "transaction_rows_dropped_missing_value": 556,
+    "negative_order_values_corrected": 8,
+    "invalid_age_rows_removed": 0,
+    "order_value_iqr_bounds": {
+      "lower": 0.0,
+      "upper": 193.14
+    },
+    "extreme_order_value_outliers_flagged": 1526,
+    "orphan_transactions_removed": 0,
+    "final_customer_count": 10500,
+    "final_transaction_count": 110610,
+    "raw_customer_count": 10532,
+    "raw_transaction_count": 112055
+  },
+  "eda_summary": {
+    "skewness": {
+      "recency_days": 2.69,
+      "frequency": 1.02,
+      "monetary_total": 1.45,
+      "avg_order_value": 0.17,
+      "tenure_months": 0.19
+    },
+    "redundant_pairs_r_gt_0_8": [
+      [
+        "frequency",
+        "monetary_total",
+        0.97
+      ],
+      [
+        "frequency",
+        "distinct_categories_purchased",
+        0.888
+      ],
+      [
+        "monetary_total",
+        "distinct_categories_purchased",
+        0.803
+      ],
+      [
+        "avg_order_value",
+        "median_order_value",
+        0.974
+      ],
+      [
+        "orders_per_tenure_month",
+        "spend_per_tenure_month",
+        0.904
+      ]
+    ],
+    "n_customers_never_purchased": 1204,
+    "pct_never_purchased": 11.47
+  },
+  "clustering_summary": {
+    "features_used": [
+      "recency_days",
+      "frequency",
+      "monetary_total",
+      "avg_order_value",
+      "distinct_categories_purchased",
+      "return_rate",
+      "tenure_months",
+      "orders_per_tenure_month",
+      "spend_per_tenure_month",
+      "engagement_score"
+    ],
+    "k_range_tested": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "inertias": {
+      "2": 64393.8,
+      "3": 53128.1,
+      "4": 46927.7,
+      "5": 41797.3,
+      "6": 37779.5,
+      "7": 35482.5,
+      "8": 33389.4
+    },
+    "silhouettes": {
+      "2": 0.3251,
+      "3": 0.2585,
+      "4": 0.2471,
+      "5": 0.2526,
+      "6": 0.2215,
+      "7": 0.2214,
+      "8": 0.2097
+    },
+    "model_selection_table": [
+      {
+        "k": 2,
+        "inertia": 64393.8,
+        "kmeans_silhouette": 0.325,
+        "hierarchical_silhouette": 0.288,
+        "kmeans_davies_bouldin": 1.188,
+        "kmeans_vs_hier_agreement_ari": 0.615,
+        "bootstrap_stability_ari": 0.987
+      },
+      {
+        "k": 3,
+        "inertia": 53128.1,
+        "kmeans_silhouette": 0.259,
+        "hierarchical_silhouette": 0.248,
+        "kmeans_davies_bouldin": 1.336,
+        "kmeans_vs_hier_agreement_ari": 0.65,
+        "bootstrap_stability_ari": 0.995
+      },
+      {
+        "k": 4,
+        "inertia": 46927.7,
+        "kmeans_silhouette": 0.247,
+        "hierarchical_silhouette": 0.151,
+        "kmeans_davies_bouldin": 1.523,
+        "kmeans_vs_hier_agreement_ari": 0.422,
+        "bootstrap_stability_ari": 0.978
+      },
+      {
+        "k": 5,
+        "inertia": 41797.3,
+        "kmeans_silhouette": 0.253,
+        "hierarchical_silhouette": 0.161,
+        "kmeans_davies_bouldin": 1.384,
+        "kmeans_vs_hier_agreement_ari": 0.42,
+        "bootstrap_stability_ari": 0.977
+      }
+    ],
+    "final_k": 4,
+    "final_kmeans_silhouette": 0.2471,
+    "final_hierarchical_silhouette": 0.1507,
+    "final_kmeans_davies_bouldin": 1.5229,
+    "final_kmeans_calinski_harabasz": 4329.55,
+    "final_agreement_ari": 0.4216,
+    "final_stability_ari": 0.9778,
+    "pca_explained_variance": [
+      0.5617,
+      0.1329
+    ],
+    "pca_loadings": {
+      "PC1": {
+        "recency_days": -0.15,
+        "frequency": 0.409,
+        "monetary_total": 0.417,
+        "avg_order_value": 0.364,
+        "distinct_categories_purchased": 0.398,
+        "return_rate": 0.042,
+        "tenure_months": 0.257,
+        "orders_per_tenure_month": 0.35,
+        "spend_per_tenure_month": 0.393,
+        "engagement_score": 0.003
+      },
+      "PC2": {
+        "recency_days": 0.629,
+        "frequency": 0.08,
+        "monetary_total": 0.093,
+        "avg_order_value": 0.115,
+        "distinct_categories_purchased": 0.084,
+        "return_rate": 0.226,
+        "tenure_months": 0.582,
+        "orders_per_tenure_month": -0.363,
+        "spend_per_tenure_month": -0.215,
+        "engagement_score": 0.04
+      }
+    }
+  },
+  "profile": [
+    {
+      "segment": 0,
+      "customer_count": 3816,
+      "pct_of_customers": 36.34,
+      "pct_of_total_monetary": 83.3,
+      "avg_recency_days": 29.9,
+      "avg_frequency": 21.75,
+      "avg_monetary_total": 1347.58,
+      "avg_avg_order_value": 59.41,
+      "avg_median_order_value": 57.49,
+      "avg_tenure_months": 18.5,
+      "avg_distinct_categories_purchased": 8.71,
+      "avg_return_rate": 0.07,
+      "avg_engagement_score": 0.95,
+      "avg_support_tickets_12m": 1.05,
+      "avg_avg_satisfaction_score": 3.75,
+      "avg_orders_per_tenure_month": 1.25,
+      "avg_spend_per_tenure_month": 76.34,
+      "segment_name": "High-Value Loyal",
+      "display_label": "High-Value Loyal (n=3,816)"
+    },
+    {
+      "segment": 1,
+      "customer_count": 1464,
+      "pct_of_customers": 13.94,
+      "pct_of_total_monetary": 0.07,
+      "avg_recency_days": 105.14,
+      "avg_frequency": 0.21,
+      "avg_monetary_total": 2.95,
+      "avg_avg_order_value": 2.53,
+      "avg_median_order_value": 2.53,
+      "avg_tenure_months": 3.86,
+      "avg_distinct_categories_purchased": 0.2,
+      "avg_return_rate": 0.0,
+      "avg_engagement_score": 0.94,
+      "avg_support_tickets_12m": 0.97,
+      "avg_avg_satisfaction_score": 3.9,
+      "avg_orders_per_tenure_month": 0.06,
+      "avg_spend_per_tenure_month": 0.76,
+      "segment_name": "New / Low Engagement",
+      "display_label": "New / Low Engagement (n=1,464)"
+    },
+    {
+      "segment": 2,
+      "customer_count": 2228,
+      "pct_of_customers": 21.22,
+      "pct_of_total_monetary": 8.4,
+      "avg_recency_days": 27.01,
+      "avg_frequency": 5.89,
+      "avg_monetary_total": 232.86,
+      "avg_avg_order_value": 40.11,
+      "avg_median_order_value": 38.68,
+      "avg_tenure_months": 5.74,
+      "avg_distinct_categories_purchased": 4.2,
+      "avg_return_rate": 0.06,
+      "avg_engagement_score": 0.91,
+      "avg_support_tickets_12m": 1.0,
+      "avg_avg_satisfaction_score": 3.93,
+      "avg_orders_per_tenure_month": 1.18,
+      "avg_spend_per_tenure_month": 47.75,
+      "segment_name": "Emerging Customers",
+      "display_label": "Emerging Customers (n=2,228)"
+    },
+    {
+      "segment": 3,
+      "customer_count": 2992,
+      "pct_of_customers": 28.5,
+      "pct_of_total_monetary": 8.23,
+      "avg_recency_days": 127.36,
+      "avg_frequency": 4.75,
+      "avg_monetary_total": 169.77,
+      "avg_avg_order_value": 35.11,
+      "avg_median_order_value": 34.14,
+      "avg_tenure_months": 13.91,
+      "avg_distinct_categories_purchased": 3.65,
+      "avg_return_rate": 0.11,
+      "avg_engagement_score": 0.92,
+      "avg_support_tickets_12m": 1.03,
+      "avg_avg_satisfaction_score": 3.81,
+      "avg_orders_per_tenure_month": 0.37,
+      "avg_spend_per_tenure_month": 12.43,
+      "segment_name": "At-Risk / Lapsing",
+      "display_label": "At-Risk / Lapsing (n=2,992)"
+    }
+  ],
+  "stats": [
+    {
+      "metric": "monetary_total",
+      "h_statistic": 8622.381932370516,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.8212063578859105,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "frequency",
+      "h_statistic": 8550.22051026553,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.814331222395725,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "distinct_categories_purchased",
+      "h_statistic": 8336.203994520962,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.7939409293560368,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "spend_per_tenure_month",
+      "h_statistic": 8075.8725113473265,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.7691380060353779,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "orders_per_tenure_month",
+      "h_statistic": 7536.4783310239645,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.71774755440396,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "avg_order_value",
+      "h_statistic": 6360.651749544645,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.6057213938209456,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "median_order_value",
+      "h_statistic": 6277.856842582321,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.5978331595448095,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "tenure_months",
+      "h_statistic": 5935.99640089471,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.5652626144145112,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "recency_days",
+      "h_statistic": 3268.0079675436123,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.3110716432492009,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "return_rate",
+      "h_statistic": 1820.9615082797343,
+      "p_value": 0.0,
+      "effect_size_epsilon_sq": 0.1732051741882369,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.0,
+      "significant_after_correction": true,
+      "effect_size_label": "large"
+    },
+    {
+      "metric": "avg_satisfaction_score",
+      "h_statistic": 71.60755527388882,
+      "p_value": 1.931875487205415e-15,
+      "effect_size_epsilon_sq": 0.006536542994844591,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 2.2831255757882177e-15,
+      "significant_after_correction": true,
+      "effect_size_label": "negligible"
+    },
+    {
+      "metric": "engagement_score",
+      "h_statistic": 6.191665348551137,
+      "p_value": 0.10264865469105916,
+      "effect_size_epsilon_sq": 0.0003040839699458019,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.11120270924864742,
+      "significant_after_correction": false,
+      "effect_size_label": "negligible"
+    },
+    {
+      "metric": "support_tickets_12m",
+      "h_statistic": 4.232684771897768,
+      "p_value": 0.23740982474325856,
+      "effect_size_epsilon_sq": 0.00011744329000550379,
+      "n": 10500,
+      "k_groups": 4,
+      "p_value_fdr_corrected": 0.23740982474325856,
+      "significant_after_correction": false,
+      "effect_size_label": "negligible"
+    }
+  ],
+  "dashboard": {
+    "total_customers": 10500,
+    "n_segments": 4,
+    "largest_segment": "High-Value Loyal",
+    "largest_segment_pct": 36.34,
+    "highest_value_segment": "High-Value Loyal",
+    "highest_value_segment_pct_spend": 83.3,
+    "at_risk_segment": "At-Risk / Lapsing",
+    "at_risk_segment_count": 2992,
+    "top20pct_customers_spend_share": 63.01
+  }
+}

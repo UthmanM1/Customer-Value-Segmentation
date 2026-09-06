@@ -1,0 +1,5 @@
+segment,customer_count,pct_of_customers,pct_of_total_monetary,avg_recency_days,avg_frequency,avg_monetary_total,avg_avg_order_value,avg_median_order_value,avg_tenure_months,avg_distinct_categories_purchased,avg_return_rate,avg_engagement_score,avg_support_tickets_12m,avg_avg_satisfaction_score,avg_orders_per_tenure_month,avg_spend_per_tenure_month,segment_name,display_label
+0,3816,36.34,83.3,29.9,21.75,1347.58,59.41,57.49,18.5,8.71,0.07,0.95,1.05,3.75,1.25,76.34,High-Value Loyal,"High-Value Loyal (n=3,816)"
+1,1464,13.94,0.07,105.14,0.21,2.95,2.53,2.53,3.86,0.2,0.0,0.94,0.97,3.9,0.06,0.76,New / Low Engagement,"New / Low Engagement (n=1,464)"
+2,2228,21.22,8.4,27.01,5.89,232.86,40.11,38.68,5.74,4.2,0.06,0.91,1.0,3.93,1.18,47.75,Emerging Customers,"Emerging Customers (n=2,228)"
+3,2992,28.5,8.23,127.36,4.75,169.77,35.11,34.14,13.91,3.65,0.11,0.92,1.03,3.81,0.37,12.43,At-Risk / Lapsing,"At-Risk / Lapsing (n=2,992)"
